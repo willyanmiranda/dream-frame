@@ -17,3 +17,21 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.slick-slider {
+  max-width: 500px;
+  height: 601px;
+  width: 100%
+}
+
+.slick-dots {
+  bottom: 0 !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white !important;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+}
