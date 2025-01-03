@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../form/button/Button';
+import Button from '../common/button';
 import Plus from '../../../assets/Plus.svg';
 import Downl from '../../../assets/Downl.svg';
 import Tick from '../../../assets/Tick.svg';

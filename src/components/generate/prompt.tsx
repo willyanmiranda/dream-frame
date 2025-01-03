@@ -1,9 +1,8 @@
-import { React, useState } from 'react'
+import { useState } from 'react'
 import Header from './header';
 import Form from './form';
-import DownloadImage from './download-image/DownloadImage';
+import DownloadImage from './downloadImage';
 import { useSelector } from 'react-redux';
-import './Prompt.css'
 
 const Prompt = () => {
   const photos = useSelector((state) => state.photos.value);

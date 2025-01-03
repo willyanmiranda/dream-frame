@@ -2,8 +2,8 @@ import { useReducer, useRef } from "react";
 import { Client } from "@gradio/client";
 import { useDispatch } from "react-redux";
 import { setPhotos, setLoader } from "../../../features/photos/photos";
-import InputRange from "./input-range/InputRange";
-import Button from "./button/Button";
+import InputRange from "../common/inputRange";
+import Button from "../common/button";
 
 const initialValues = {
   prompt: "",
