@@ -4,17 +4,17 @@ import { useDispatch } from "react-redux";
 import { setPhotos, setLoader } from "@/store/photos/photoSlice";
 import InputRange from "../common/inputRange";
 import Button from "../common/button";
-import { PromptType } from "@/types/prompt";
+import { ExamplePromptType, PromptType } from "@/types/prompt";
 
 const initialValues: PromptType = {
   prompt: "",
   imageStyle: "2560 x 1440",
-  promptNegative: true,
+  promptNegative: "true",
   promptWidth: 1024,
   promptHeight: 1024,
 };
 
-const examplesPrompt = {
+const examplesPrompt: ExamplePromptType = {
   default: "",
   animals:
     "[Jaguar with green eyes stalking prey]::7 [detailed vegetation and waterfall in amazon rainforest background, cinematic shoot, ultrareal, morning light]::3 --ar 16:9 --s 400",
@@ -46,35 +46,36 @@ const Form = () => {
   const dispatchPhotos = useDispatch();
   const buttonRef = useRef(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     dispatch({ type: "SET_FIELD", field: e.target.name, value: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     dispatchPhotos(setLoader());
-    buttonRef.current.disabled = true;
-    const client = await Client.connect("mukaist/DALLE-4K");
-    const result = await client.predict("/run", {
-      prompt: state.prompt,
-      negative_prompt: state.prompt,
-      use_negative_prompt: state.promptNegative,
-      style: state.imageStyle,
-      seed: 0,
-      width: parseInt(state.promptWidth),
-      height: parseInt(state.promptHeight),
-      guidance_scale: 0.1,
-      randomize_seed: true,
-    });
-    dispatchPhotos(setLoader());
-    dispatchPhotos(setPhotos(result.data[0]));
+    // buttonRef.current.disabled = true;
+    // const client = await Client.connect("mukaist/DALLE-4K");
+    // const result = await client.predict("/run", {
+    //   prompt: state.prompt,
+    //   negative_prompt: state.prompt,
+    //   use_negative_prompt: state.promptNegative,
+    //   style: state.imageStyle,
+    //   seed: 0,
+    //   width: parseInt(state.promptWidth),
+    //   height: parseInt(state.promptHeight),
+    //   guidance_scale: 0.1,
+    //   randomize_seed: true,
+    // });
+    // dispatchPhotos(setLoader());
+    // dispatchPhotos(setPhotos(result.data[0]));
   };
 
-  const handlePromptValue = (e) => {
-    let example = examplesPrompt[e.target.value];
+  const handlePromptValue = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value as keyof ExamplePromptType;
+    let example = examplesPrompt[value];
     console.log(example);
     dispatch({ type: "SET_FIELD", field: "prompt", value: example });
-  };
+};
 
   return (
     <form className="flex flex-col justify-between h-full w-full">
@@ -139,8 +140,8 @@ const Form = () => {
             id="promptNegative"
             className="border-2 border-gray-700 bg-[#1A1D2D] rounded-lg h-10 w-full px-4 text-white cursor-pointer"
           >
-            <option value={true}>Ativado</option>
-            <option value={false}>Desativado</option>
+            <option value="true">Ativado</option>
+            <option value="false">Desativado</option>
           </select>
         </div>
       </div>
