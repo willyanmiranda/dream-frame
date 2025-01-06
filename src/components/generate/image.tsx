@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const ImageItem = (props) => {
+const ImageItem = (props: { url: string }) => {
     return (
       <Image 
       className="slide-image"

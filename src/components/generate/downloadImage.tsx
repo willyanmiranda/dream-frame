@@ -4,15 +4,14 @@ import Plus from '../../../assets/Plus.svg';
 import Downl from '../../../assets/Downl.svg';
 import Tick from '../../../assets/Tick.svg';
 import { useDispatch } from 'react-redux';
-import { setPhotos } from '../../../features/photos/photos';
-import { saveAs } from 'file-saver';
-import "./DownloadImage.css"
+//import { saveAs } from 'file-saver';
+import { setPhotos } from '@/store/photos/photoSlice';
 
 const DownloadImage = (props) => {
     const dispatchPhotos = useDispatch()
     const download = () => {
         props.images.forEach((img, index) => {
-            saveAs(img.image.url, `image-${index}.jpg`);
+            //saveAs(img.image.url, `image-${index}.jpg`);
         });
     }
     return (

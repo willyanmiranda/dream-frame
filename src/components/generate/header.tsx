@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = (props) => {
+const Header = (props: { hasPhotos: boolean }) => {
   return (
     <div className="w-full h-[45px] max-w-[190px] border-2 border-gray-700 rounded-[12px] flex items-center">
       <span

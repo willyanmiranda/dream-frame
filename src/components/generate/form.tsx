@@ -1,11 +1,12 @@
 import { useReducer, useRef } from "react";
 import { Client } from "@gradio/client";
 import { useDispatch } from "react-redux";
-import { setPhotos, setLoader } from "../../../features/photos/photos";
+import { setPhotos, setLoader } from "@/store/photos/photoSlice";
 import InputRange from "../common/inputRange";
 import Button from "../common/button";
+import { PromptType } from "@/types/prompt";
 
-const initialValues = {
+const initialValues: PromptType = {
   prompt: "",
   imageStyle: "2560 x 1440",
   promptNegative: true,
@@ -28,7 +29,7 @@ const examplesPrompt = {
     "A serene lakeside scene at sunset with visible brushwork. Impasto texture and chiaroscuro lighting, emulating the style of a classical oil painting --ar 2:1",
 };
 
-const reducer = (state, action) => {
+const reducer = (state: PromptType, action: { type: string, field: string, value: string }) => {
   switch (action.type) {
     case "SET_FIELD":
       return {

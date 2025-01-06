@@ -1,13 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { productReducer } from "./product/productSlice";
-import { optionsReducer } from "./product/optionSlice";
-import { variantsReducer } from "./product/variantSlice";
+import { photoReducer } from "./photos/photoSlice";
 
 const store = configureStore({
     reducer: {
-        product: productReducer,
-        options: optionsReducer,
-        variants: variantsReducer
+        photos: photoReducer
     },
 });
 
