@@ -5,6 +5,7 @@ import { setPhotos, setLoader } from "@/store/photos/photoSlice";
 import InputRange from "../common/inputRange";
 import Button from "../common/button";
 import { ExamplePromptType, PromptType } from "@/types/prompt";
+import Plus from "../../../public/Plus.svg"
 
 const initialValues: PromptType = {
   prompt: "",

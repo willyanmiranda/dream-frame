@@ -9,7 +9,7 @@ const Prompt = () => {
   return (
     <div className='flex flex-col items-start w-full gap-16'>
       <Header hasPhotos={!!photos}/>
-      {!photos ? (<Form/>) : (<DownloadImage images={photos}/>)}
+      {!photos ? (<Form/>) : (<DownloadImage/>)}
     </div>
   )
 }

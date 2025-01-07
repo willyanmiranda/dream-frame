@@ -1,18 +1,18 @@
 import React from 'react';
 import Button from '../common/button';
-import Plus from '../../../assets/Plus.svg';
-import Downl from '../../../assets/Downl.svg';
-import Tick from '../../../assets/Tick.svg';
+import Downl from '../../../public/Downl.svg';
+import Plus from "../../../public/Plus.svg"
+import Tick from '../../../public/Tick.svg';
 import { useDispatch } from 'react-redux';
 //import { saveAs } from 'file-saver';
 import { setPhotos } from '@/store/photos/photoSlice';
 
-const DownloadImage = (props) => {
+const DownloadImage = () => {
     const dispatchPhotos = useDispatch()
     const download = () => {
-        props.images.forEach((img, index) => {
-            //saveAs(img.image.url, `image-${index}.jpg`);
-        });
+        // props.images.forEach((img, index) => {
+        //     //saveAs(img.image.url, `image-${index}.jpg`);
+        // });
     }
     return (
         <div className="w-full h-full flex max-h-[350px] justify-center">
