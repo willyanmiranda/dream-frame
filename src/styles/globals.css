@@ -3,8 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,4 +41,41 @@ body {
 
 .slick-dots li button:before {
   color: white !important;
+}
+
+#root {
+  max-width: 1300px;
+  text-align: center;
+  width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #1A1D2D !important;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }

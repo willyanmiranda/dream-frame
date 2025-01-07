@@ -2,7 +2,7 @@ import Slide from "@/components/generate/slide";
 
 const ImageGeneratedSection = () => {
   return (
-    <div className='flex items-center justify-center h-[600px] w-full max-w-[500px] bg-[#242940] rounded-[20px] border-[8px] border-[#2C314D]'>
+    <div className='flex items-center justify-center h-full w-full bg-[#242940] border-2 border-gray-700 rounded-[12px]'>
       <Slide/>
     </div>
   )

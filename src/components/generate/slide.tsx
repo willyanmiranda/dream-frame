@@ -30,7 +30,12 @@ const Slide = () => {
         // ) : (
         //     <img src={isLoading ? spinner : illustration} alt="illustration" className="w-60 h-60" />
         // )
-        <img src={isLoading ? spinner : illustration} alt="illustration" className="w-60 h-60" />
+        
+        <img
+            src={isLoading ? "/spinner.svg" : "/illustration.png"}
+            alt="illustration"
+            className="w-60 h-60"
+        />
     );
 };
 
