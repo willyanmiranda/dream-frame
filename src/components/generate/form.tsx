@@ -1,3 +1,5 @@
+"use client"
+
 import { useReducer, useRef } from "react";
 import { Client } from "@gradio/client";
 import { useDispatch } from "react-redux";

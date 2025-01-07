@@ -1,3 +1,5 @@
+"use client";
+
 import Header from './header';
 import Form from './form';
 import DownloadImage from './downloadImage';

@@ -1,3 +1,5 @@
+"use client";
+
 //import Slider from "react-slick";
 import illustration from '../../../public/illustration.png';
 import spinner from '../../../public/spinner.svg'

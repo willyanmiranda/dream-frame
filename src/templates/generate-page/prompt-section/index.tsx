@@ -1,6 +1,8 @@
+import Prompt from "@/components/generate/prompt";
+
 const PromptSection = () => {
   return (
-   <div>...</div>
+    <Prompt/>
   )
 }
 
